@@ -10,24 +10,24 @@ function fetchApi(source) {
   .then(function(json) {
     json.data.children.forEach(function (data) {
       var img = document.createElement("img");
-      var div = document.createElement("div");
-      linkToPost({
-        source: data.data.permalink,
-        title: data.data.title
-      }, div);
+      var div = document.createElement("article");
       if (data.data.preview) {
+        div.appendChild(img);
         linkToSource({
           img: data.data.preview.images[0].source.url
         }, div);
         img.src = data.data.preview.images[0].source.url;
-        div.appendChild(img);
       } else {
+        img.src = 'close.jpg'
+        div.appendChild(img);
         linkToSource({
           img: 'close.jpg'
         }, div);
-        img.src = 'close.jpg'
-        div.appendChild(img);
       }
+      linkToPost({
+        source: data.data.permalink,
+        title: data.data.title
+      }, div);
       container.appendChild(div);
     })
   });
