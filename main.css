@@ -33,8 +33,56 @@ div article a:hover {
   color: #009688;
 }
 
+header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+header section {
+  text-align: center;
+}
+
+header section input {
+  background-color: #f5f5f5;
+  border: none;
+  border-bottom: 1px solid #000;
+  font-size: 20px;
+  height: 50px;
+  outline: none;
+  padding: 10px 10px 0 10px;
+  width: 300px;
+}
+
+header section button {
+  background-color: #3F51B5;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  margin: 10px 0;
+  outline: none;
+  padding: 10px 20px;
+  transition: background-color 1s ease;
+}
+
+header section button:hover {
+  background-color: #2196f3;
+}
+
 @media screen and (min-width: 961px) {
   div article {
     width: 45%;
+  }
+
+  header section {
+    text-align: initial;
+  }
+
+  header section button {
+    margin: 0;
   }
 }

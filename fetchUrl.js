@@ -46,8 +46,13 @@ function linkToPost(links, div) {
 function linkToSource(link, div) {
     var text = document.createElement("p");
     var hyperlink = document.createElement("a");
-    hyperlink.href = link.img;
-    hyperlink.textContent = "full image";
+
+    if (link.img !== 'close.jpg') {
+      hyperlink.href = link.img;
+      hyperlink.textContent = "full image";
+    } else {
+      hyperlink.textContent = "no image";
+    }
     text.appendChild(hyperlink);
     div.appendChild(text);
 }
