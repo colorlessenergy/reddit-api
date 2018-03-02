@@ -11,12 +11,12 @@ function fetchApi(source) {
     json.data.children.forEach(function (data) {
       var img = document.createElement("img");
       var div = document.createElement("article");
-      if (data.data.preview) {
+      if (data.data.url) {
         div.appendChild(img);
         linkToSource({
-          img: data.data.preview.images[0].source.url
+          img: data.data.url
         }, div);
-        img.src = data.data.preview.images[0].source.url;
+        img.src = data.data.url;
       } else {
         img.src = 'close.jpg'
         div.appendChild(img);
@@ -34,7 +34,6 @@ function fetchApi(source) {
 }
 
 function linkToPost(links, div) {
-  console.log(links)
     var text = document.createElement("p");
     var linkToPost = document.createElement("a");
     linkToPost.href = "https://www.reddit.com" + links.source;
